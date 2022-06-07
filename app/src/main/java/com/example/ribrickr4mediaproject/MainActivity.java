@@ -16,6 +16,7 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Variable for WebView and WebView WebSettings
     private WebView webView;
     private WebSettings webSettings;
 
@@ -24,19 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //Get WebView ID and enable WebView Settings
         webView = (WebView) findViewById(R.id.WebView);
-
-
-
         webSettings = webView.getSettings();
 
+        //Optional Settings
         webSettings.setJavaScriptEnabled(true);
         webSettings.setAllowContentAccess(true);
         webSettings.setAppCacheEnabled(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setUseWideViewPort(true);
 
+
+        //Opening the Web that load in the App
         webView.setWebViewClient(new WebViewClient(){
+            //Prevent error when jump to Whatsapp or other web
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 if (url == null || url.startsWith("http://") || url.startsWith("https://")) return false;
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("https://ribrick.id/");
 
     }
-    //Kembali ke halaman Sebelumnya
+    //When back button pressed, go back to previous page
     @Override
     public void onBackPressed() {
         if (webView.canGoBack()){
