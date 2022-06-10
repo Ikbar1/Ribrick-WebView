@@ -5,6 +5,8 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Set back the Main Theme, cause in the Manifest the app Theme is set for Splash screen
+        setTheme(R.style.Theme_RibrickR4MediaProject);
         setContentView(R.layout.activity_main);
 
 
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         webView.loadUrl("https://ribrick.id/");
+
 
     }
     //When back button pressed, go back to previous page
