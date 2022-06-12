@@ -2,7 +2,10 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/white"/>
-    <item android:drawable="@drawable/ss_logo" android:width="395px" android:height="210px" android:gravity="center"/>
+    <item android:drawable="@drawable/ss_logo"
+        android:width="500px"
+        android:height="210px"
+        android:gravity="center"/>
 
 
 </layer-list>
